@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const data = fs.readFileSync(__dirname + '/data.txt').toString();
 
-const lines = data.split('\n').filter(Boolean);;
+const lines = data.split('\n').filter(Boolean);
 
 const testData = [
   '..##.......',
