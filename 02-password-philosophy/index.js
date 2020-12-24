@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const data = fs.readFileSync('data.txt').toString();
+const data = fs.readFileSync(__dirname + '/data.txt').toString();
 
 const parseLine = (line) => line.match(/(\d+)-(\d+) (\w): (\w+)/);
 
@@ -28,8 +28,10 @@ const testData = [
   '2-9 c: ccccccccc'
 ];
 
-console.log(countValidPasswords(testData, validatePassword));
+console.log('02-a-test', countValidPasswords(testData, validatePassword));
 
-console.log(countValidPasswords(lines, validatePassword));
+console.log('02-a-live', countValidPasswords(lines, validatePassword));
 
-console.log(countValidPasswords(lines, validatePassword2));
+console.log('02-b-test', countValidPasswords(testData, validatePassword2));
+
+console.log('02-b-live', countValidPasswords(lines, validatePassword2));

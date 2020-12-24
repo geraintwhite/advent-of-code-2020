@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const data = fs.readFileSync('data.txt').toString();
+const data = fs.readFileSync(__dirname + '/data.txt').toString();
 
 const numbers = data.split('\n').map(Number);
 
@@ -19,13 +19,13 @@ const findTrioMatch = (numbers, value) => {
 const findTrio = (numbers) => numbers.reduce((m, n) => m || findTrioMatch(numbers, n), 0);
 
 const [a, b] = findPair([1721, 979, 366, 299, 675, 1456]);
-console.log(a, b, a * b);
+console.log('01-a-test', a * b);
 
 const [c, d] = findPair(numbers);
-console.log(c, d, c * d);
+console.log('01-a-live', c * d);
 
 const [e, f, g] = findTrio([1721, 979, 366, 299, 675, 1456]);
-console.log(e, f, g, e * f * g);
+console.log('01-b-test', e * f * g);
 
 const [h, i, j] = findTrio(numbers);
-console.log(h, i, j, h * i * j);
+console.log('01-b-live', h * i * j);

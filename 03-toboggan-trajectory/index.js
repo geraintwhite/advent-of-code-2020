@@ -1,6 +1,8 @@
 const fs = require('fs');
 
-const data = fs.readFileSync('data.txt').toString().split('\n').filter(Boolean);;
+const data = fs.readFileSync(__dirname + '/data.txt').toString();
+
+const lines = data.split('\n').filter(Boolean);;
 
 const testData = [
   '..##.......',
@@ -33,7 +35,7 @@ const checkRoutes = (map, routes) => routes.reduce((total, route) => total * cou
 
 console.log('03-a-test', countTrees(testData, [3, 1]));
 
-console.log('03-a-live', countTrees(data, [3, 1]));
+console.log('03-a-live', countTrees(lines, [3, 1]));
 
 const routes = [
   [1, 1],
@@ -45,4 +47,4 @@ const routes = [
 
 console.log('03-b-test', checkRoutes(testData, routes));
 
-console.log('03-b-live', checkRoutes(data, routes));
+console.log('03-b-live', checkRoutes(lines, routes));
